@@ -41,7 +41,14 @@ public class MainActivity extends AppCompatActivity {
         TextView colorsTV = findViewById(R.id.colors);
         colorsTV.setOnClickListener(new ColorsClickListener());
         TextView familyTV = findViewById(R.id.family);
-        familyTV.setOnClickListener(mFamilyListener);
+        familyTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
+
+                startActivity(familyIntent);
+            }
+        });
     }
 
     private View.OnClickListener mNumbersListener = new View.OnClickListener(){
@@ -52,14 +59,12 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    private View.OnClickListener mFamilyListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
-
-            startActivity(familyIntent);
-        }
-    };
+//    private View.OnClickListener mFamilyListener = new View.OnClickListener() {
+//        @Override
+//        public void onClick(View v) {
+//
+//        }
+//    };
 
 //    private View.OnClickListener mColorsListener = new View.OnClickListener() {
 //        @Override
