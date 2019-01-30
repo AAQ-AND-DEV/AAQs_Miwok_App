@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         TextView numbersTV = findViewById(R.id.numbers);
         numbersTV.setOnClickListener(mNumbersListener);
         TextView phrasesTV = findViewById(R.id.phrases);
-        phrasesTV.setOnClickListener(mPhrasesListener);
+        phrasesTV.setOnClickListener(new PhrasesClickListener());
         TextView colorsTV = findViewById(R.id.colors);
         colorsTV.setOnClickListener(mColorsListener);
         TextView familyTV = findViewById(R.id.family);
@@ -69,12 +69,21 @@ public class MainActivity extends AppCompatActivity {
             startActivity(colorsIntent);
         }
     };
-    private View.OnClickListener mPhrasesListener = new View.OnClickListener() {
+//    private View.OnClickListener mPhrasesListener = new View.OnClickListener() {
+//        @Override
+//        public void onClick(View v) {
+//            Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
+//
+//            startActivity(phrasesIntent);
+//        }
+//    };
+    public class PhrasesClickListener implements View.OnClickListener{
+
         @Override
         public void onClick(View v) {
             Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
 
             startActivity(phrasesIntent);
         }
-    };
+    }
 }
