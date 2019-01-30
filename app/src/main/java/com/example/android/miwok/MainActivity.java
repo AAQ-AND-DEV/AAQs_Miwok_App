@@ -21,6 +21,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
+//it appears that I will have to implement the onClickListeners anonymously
+//not by implementing for the activity.
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -32,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
 
         TextView numbersTV = findViewById(R.id.numbers);
         numbersTV.setOnClickListener(mNumbersListener);
+        TextView phrasesTV = findViewById(R.id.phrases);
+        phrasesTV.setOnClickListener(mPhrasesListener);
+        TextView colorsTV = findViewById(R.id.colors);
+        colorsTV.setOnClickListener(mColorsListener);
+        TextView familyTV = findViewById(R.id.family);
+        familyTV.setOnClickListener(mFamilyListener);
     }
 
     private View.OnClickListener mNumbersListener = new View.OnClickListener(){
@@ -42,24 +52,29 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    public void openNumbersList(View v){
+    private View.OnClickListener mFamilyListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
+
+            startActivity(familyIntent);
         }
+    };
 
-    public void openFamilyList(View v){
-        Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
+    private View.OnClickListener mColorsListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent colorsIntent = new Intent(MainActivity.this, ColorsActivity.class);
 
-        startActivity(familyIntent);
-    }
+            startActivity(colorsIntent);
+        }
+    };
+    private View.OnClickListener mPhrasesListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
 
-    public void openColorsList(View v){
-        Intent colorsIntent = new Intent(MainActivity.this, ColorsActivity.class);
-
-        startActivity(colorsIntent);
-    }
-
-    public void openPhrasesList(View v){
-        Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
-
-        startActivity(phrasesIntent);
-    }
+            startActivity(phrasesIntent);
+        }
+    };
 }
