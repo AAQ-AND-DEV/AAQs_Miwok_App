@@ -9,6 +9,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.android.miwok.adapter.WordAdapter;
 import com.example.android.miwok.pojo.Word;
 
 import java.util.ArrayList;
@@ -29,10 +30,10 @@ public class NumbersActivity extends AppCompatActivity {
         //gives the ref to the storage location of the array
         //Log.i("NumbersActivity.class", words.toString());
         ListView listView = findViewById(R.id.numbers_list);
-        /*
-        ArrayAdapter<String> itemsAdapter =
-                new ArrayAdapter<String>(this, R.layout.word_item_layout, words);
+
+        WordAdapter itemsAdapter =
+                new WordAdapter(this, R.layout.word_item_layout, words);
         listView.setAdapter(itemsAdapter);
-        */
+
     }
 }
