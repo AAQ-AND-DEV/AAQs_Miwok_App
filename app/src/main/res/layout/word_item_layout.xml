@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView
+        style="@style/WordItemTVStyle"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/word_item_miwok_TV"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        />
+    <TextView
+        style="@style/WordItemTVStyle"
+        android:layout_below="@id/word_item_miwok_TV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/word_item_eng_TV"/>
+</RelativeLayout>

@@ -30,4 +30,9 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textAppearance">?android:textAppearanceMedium</item>
     </style>
+
+    <!-- Style  for word item TVs -->
+    <style name="WordItemTVStyle" parent="AlertDialog.AppCompat.Light">
+        <item name="android:paddingLeft">16dp</item>
+    </style>
 </resources>
