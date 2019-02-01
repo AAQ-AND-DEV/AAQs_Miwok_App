@@ -28,8 +28,6 @@ public class NumbersActivity extends AppCompatActivity {
                         new Word("eight", "kawinta"), new Word("nine", "wo’e"), new Word("ten", "na’aacha")));
         //gives the ref to the storage location of the array
         //Log.i("NumbersActivity.class", words.toString());
-        words.add(new Word("testing mutability", "does it work"));
-        Log.i(TAG, words.get(10).toString());
         ListView listView = findViewById(R.id.numbers_list);
         /*
         ArrayAdapter<String> itemsAdapter =
