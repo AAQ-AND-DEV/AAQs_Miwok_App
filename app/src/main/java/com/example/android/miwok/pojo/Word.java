@@ -30,4 +30,8 @@ public class Word {
         return mMiwokTranslation;
     }
 
+    @Override
+    public String toString() {
+        return getDefaultTranslation() + " is " + getMiwokTranslation() + " in Miwok";
+    }
 }
