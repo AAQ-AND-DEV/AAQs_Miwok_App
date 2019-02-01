@@ -9,6 +9,8 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.android.miwok.pojo.Word;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -19,15 +21,20 @@ public class NumbersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
-        ArrayList<String> words = new ArrayList<String>
-                (Arrays.asList("one", "two", "three", "four", "five",
-                        "six", "seven", "eight", "nine", "ten"));
+        ArrayList<Word> words = new ArrayList<Word>
+                (Arrays.asList(new Word("one", "lutti"), new Word("two", "otiiko"),new Word("three", "tolookosu"),
+                        new Word("four", "oyyisa"), new Word("five", "massokka"),
+                        new Word("six", "temmokka"), new Word("seven", "kenekaku"),
+                        new Word("eight", "kawinta"), new Word("nine", "wo’e"), new Word("ten", "na’aacha")));
         //gives the ref to the storage location of the array
-        Log.i("NumbersActivity.class", words.toString());
-
+        //Log.i("NumbersActivity.class", words.toString());
+        words.add(new Word("testing mutability", "does it work"));
+        Log.i(TAG, words.get(10).toString());
         ListView listView = findViewById(R.id.numbers_list);
-        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, words);
+        /*
+        ArrayAdapter<String> itemsAdapter =
+                new ArrayAdapter<String>(this, R.layout.word_item_layout, words);
         listView.setAdapter(itemsAdapter);
-
+        */
     }
 }
