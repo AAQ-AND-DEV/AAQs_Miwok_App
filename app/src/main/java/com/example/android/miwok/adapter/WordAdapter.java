@@ -19,6 +19,12 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
     private static final String TAG = WordAdapter.class.getSimpleName();
 
+    /**
+     *
+     * @param context
+     * @param resource passing in 0 to super ctor, b/c we inflate our own layout in getView
+     * @param objects
+     */
     public WordAdapter(@NonNull Context context, int resource, @NonNull List<Word> objects) {
         super(context, 0, objects);
     }
